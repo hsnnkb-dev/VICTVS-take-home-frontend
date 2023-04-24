@@ -13,6 +13,11 @@
     src: url("./fonts/Bokonique-Regular.otf") format("opentype");
 }
 
+@font-face {
+    font-family: Neuzeit;
+    src: url("./fonts/Neuzeit\ Office\ W01\ Regular.ttf") format("truetype");
+}
+
 .App {
     text-align: center;
     height: 100vh;
@@ -40,6 +45,36 @@ p {
 .Header span {
     font-family: EloquiaLight;
     font-size: 2.2rem;
+}
+
+.Link {
+    text-decoration: none;
+    font-family: Neuzeit;
+    font-weight: 600;
+    color: #02020a;
+    background-color: #ffffff;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    margin: 12px 5vh 12px 5vh;
+}
+
+.Link:hover {
+    color: #ffffff;
+    background-color: #02020a;
+    border: 1px solid #ffffff;
+    transition: linear 250ms;
+}
+
+.Navigation {
+    font-size: 1.5rem;
+    margin-top: 36px;
+}
+
+.MainLinks {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column
 }
 
 .Footer p {
