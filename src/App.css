@@ -1,38 +1,49 @@
+@font-face {
+    font-family: EloquiaBold;
+    src: url("./fonts/Typekiln\ -\ EloquiaDisplay-ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: EloquiaLight;
+    src: url("./fonts/Typekiln\ -\ EloquiaText-ExtraLight.otf") format("opentype");
+}
+
+@font-face {
+    font-family: BokoniqueRegular;
+    src: url("./fonts/Bokonique-Regular.otf") format("opentype");
+}
+
 .App {
-  text-align: center;
+    text-align: center;
+    height: 100vh;
+    background-color: #02020a;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+    font-family: BokoniqueRegular;
+    font-size: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Header {
+    margin-top: 36px;
+    padding: 16px;
+    font-size: 3rem;
+    font-family: EloquiaBold;
+    line-height: 70%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Header span {
+    font-family: EloquiaLight;
+    font-size: 2.2rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Footer p {
+    font-size: medium;
+    font-family: BokoniqueRegular;
+    font-weight: 100;
 }
