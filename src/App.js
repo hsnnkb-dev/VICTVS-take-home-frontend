@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/Header';
 import Home from './components/Home';
 import Footer from './components/Footer';
+import ExamList from './components/ExamList';
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <div className="App">
         <Header></Header>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/sessions" element={<ExamList />} />
         </Routes>
         <Footer></Footer>
       </div>
