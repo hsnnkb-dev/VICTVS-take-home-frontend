@@ -45,6 +45,7 @@ p {
 .Header span {
     font-family: EloquiaLight;
     font-size: 2.2rem;
+    text-decoration: underline 1px;
 }
 
 .Link {
