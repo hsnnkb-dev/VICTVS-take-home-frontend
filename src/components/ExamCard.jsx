@@ -1,16 +1,20 @@
-export default function ExamCard({ExamSession}) {
+export default function ExamCard({session}) {
+
+  const datetime = session.Date.split("T");
 
   return (
-    <section>
-      <p>{ExamSession.id}</p>
-      <p>{ExamSession.Title}</p>
-      <p>{ExamSession.Description}</p>
-      <p>{ExamSession.CandidateId}</p>
-      <p>{ExamSession.CandidateName}</p>
-      <p>{ExamSession.Date}</p>
-      <p>{ExamSession.LocationName}</p>
-      <p>{ExamSession.Latitude}</p>
-      <p>{ExamSession.Longitude}</p>
+    <section className="ExamCard">
+      <div className="SessionDetails">
+        <h3>{session.Title}</h3>
+        <p>{session.Description}</p>
+        <p>{session.CandidateId}</p>
+        <p>Candidate: {session.CandidateName}</p>
+      </div>
+      <div className="LocationDetails">
+        <p>{datetime[0]}</p>
+        <p>{datetime[1].slice(0, -1)}</p>
+        <p className="LocationName">{session.LocationName}</p>
+      </div>
     </section>
   );
 }
