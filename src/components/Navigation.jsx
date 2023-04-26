@@ -8,7 +8,7 @@ export default function Navigation() {
         <Link className={"Link"} to="/">
           Home
         </Link>
-        <Link className={"Link"} to="/Sessions">
+        <Link className={"Link"} to="/sessions">
           Sessions
         </Link>
       </section>
