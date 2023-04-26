@@ -4,7 +4,6 @@ export default function FilterModal(props) {
   const [ filterDate, setFilterDate ] = useState("");
   const [ filterName, setFilterName ] = useState("");
   const [ filterLocation, setFilterLocation ] = useState("");
-  const [ filtersObject, setFiltersObject ] = useState({date: '', name: '', location: ''})
 
   if (props.hide) {
     return null;
@@ -12,10 +11,21 @@ export default function FilterModal(props) {
 
   const handleAddFilters = (filterDate, filterName, filterLocation) => {
     const params = { date: "", name: "", location: "" };
-    if (filterDate !== "") params.date = filterDate;
-    if (filterName !== "") params.name = filterName;
-    if (filterLocation !== "") params.location = filterLocation;
-    setFiltersObject(params);
+    const dateRegEx = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
+
+    if (dateRegEx.test(filterDate)) {
+      params.date = filterDate;
+    } else {
+      console.log("Date is of the wrong format, try yyyy-mm-dd!")
+    }
+
+    if (filterName !== "") { 
+      params.name = filterName;
+    }
+    if (filterLocation !== "") {
+      params.location = filterLocation;
+    }
+    props.setFiltersObject(params);
   };
 
   return (
@@ -23,7 +33,7 @@ export default function FilterModal(props) {
       <div className="ModalContent">
         <div className="ModalHeader">
           <h4 className="ModalTitle">
-            Filter Sessions (date, candidate, location)
+            Filter Exam Sessions
           </h4>
         </div>
         <div className="ModalBody">
@@ -33,6 +43,7 @@ export default function FilterModal(props) {
               type="datetime"
               name="datetime"
               id="datetime-field"
+              value={filterDate}
               onInput={(event) => setFilterDate(event.target.value)}
             />
           </div>
@@ -41,6 +52,7 @@ export default function FilterModal(props) {
             <input
               type="text"
               name="candidate-name"
+              value={filterName}
               onInput={(event) => setFilterName(event.target.value)}
             />
           </div>
@@ -49,6 +61,7 @@ export default function FilterModal(props) {
             <input
               type="text"
               name="location"
+              value={filterLocation}
               onInput={(event) => setFilterLocation(event.target.value)}
             />
           </div>
@@ -67,10 +80,7 @@ export default function FilterModal(props) {
         <div className="ModalFooter">
           <button
             className="Button"
-            onClick={() => {
-              props.setHide(true);
-              console.log(filtersObject);
-            }}
+            onClick={() => props.setHide(true)}
           >
             Close
           </button>

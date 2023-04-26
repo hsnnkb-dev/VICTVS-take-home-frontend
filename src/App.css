@@ -116,6 +116,13 @@ p {
 
 .LocationName {}
 
+.FilterContainer {
+    margin: -10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
 .FilterModal {
     position: fixed;
     left: 0;
@@ -139,11 +146,6 @@ p {
 .ModalHeader,
 .ModalFooter {
     padding: 10px;
-}
-
-.ModalFooter {
-    display: flex;
-    flex-direction: column;
 }
 
 .ModalTitle {
