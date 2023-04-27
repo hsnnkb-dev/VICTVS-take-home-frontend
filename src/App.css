@@ -45,6 +45,12 @@ p {
     line-height: 70%;
 }
 
+.Header h1 {
+    margin: -10px;
+    line-height: 0%;
+    font-size: 3.4rem;
+}
+
 .Header span {
     font-family: EloquiaLight;
     font-size: 2.2rem;

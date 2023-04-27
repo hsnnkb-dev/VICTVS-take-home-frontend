@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className="Header">
       <div>
-        victvs <br />
+        <h1>victvs</h1> <br />
         <span>Exam Scheduler</span>
       </div>
 
