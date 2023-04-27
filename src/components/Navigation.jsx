@@ -11,6 +11,9 @@ export default function Navigation() {
         <Link className={"Link"} to="/sessions">
           Sessions
         </Link>
+        <Link className={"Link"} to="/exam-map">
+          Map
+        </Link>
       </section>
     </nav>
   );
