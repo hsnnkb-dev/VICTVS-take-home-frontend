@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import ExamList from './components/ExamList';
+import ExamMap from './components/ExamMap';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sessions" element={<ExamList />} />
+          <Route path="/exam-map" element={<ExamMap />} />
         </Routes>
         <Footer></Footer>
       </div>
