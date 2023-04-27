@@ -1,9 +1,19 @@
 import { useState } from 'react';
+import { toast } from "react-hot-toast";
 
 export default function FilterModal(props) {
   const [ filterDate, setFilterDate ] = useState("");
   const [ filterName, setFilterName ] = useState("");
   const [ filterLocation, setFilterLocation ] = useState("");
+
+  const toastStyle = {
+    style: {
+      borderRadius: "12px",
+      padding: "12px",
+      color: "#02020a",
+      backgroundColor: "#FFFFFF",
+    },
+  };
 
   if (props.hide) {
     return null;
@@ -12,21 +22,35 @@ export default function FilterModal(props) {
   const handleAddFilters = (filterDate, filterName, filterLocation) => {
     const params = { date: "", name: "", location: "" };
     const dateRegEx = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
+    let toastMessage = '';
 
-    if (dateRegEx.test(filterDate)) {
+    if (dateRegEx.test(filterDate) && filterDate !== '') {
       params.date = filterDate;
-    } else {
-      console.log("Date is of the wrong format, try yyyy-mm-dd!")
-    }
+      toastMessage += "Added Date Filter: " + params.date + '\n';
+      setFilterDate('');
+    } 
 
-    if (filterName !== "") { 
+    if (filterName !== "") {
       params.name = filterName;
-    }
+      toastMessage += "Added Name Filter: " + params.name + "\n";
+      setFilterName("");
+    } 
     if (filterLocation !== "") {
       params.location = filterLocation;
+      toastMessage += "Added Location Filter: " + params.location + "\n";
+      setFilterLocation ("");
     }
+
+    if (toastMessage) {
+      toast(toastMessage, toastStyle);
+    }
+
     props.setFiltersObject(params);
   };
+
+  const handleClose = () => {
+    props.setHide(true);
+  }
 
   return (
     <div className="FilterModal">
@@ -80,7 +104,7 @@ export default function FilterModal(props) {
         <div className="ModalFooter">
           <button
             className="Button"
-            onClick={() => props.setHide(true)}
+            onClick={() => handleClose() }
           >
             Close
           </button>

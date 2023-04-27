@@ -5,8 +5,11 @@ export default function Header() {
 
   return (
     <header className="Header">
-      victvs <br />
-      <span>Exam Scheduler</span>
+      <div>
+        <h1>victvs</h1> <br />
+        <span>Exam Scheduler</span>
+      </div>
+
       <Navigation />
     </header>
   );
