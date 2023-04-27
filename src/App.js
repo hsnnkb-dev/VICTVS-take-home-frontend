@@ -1,5 +1,6 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import Header from './components/Header';
 import Home from './components/Home';
 import Footer from './components/Footer';
@@ -18,6 +19,7 @@ function App() {
         </Routes>
         <Footer></Footer>
       </div>
+      <Toaster position="top-center" reverseOrder={true} />
     </BrowserRouter>
   );
 }

@@ -18,6 +18,10 @@
     src: url("./fonts/Neuzeit\ Office\ W01\ Regular.ttf") format("truetype");
 }
 
+html {
+    background-color: #02020a;
+}
+
 .App {
     text-align: center;
     height: 100%;
@@ -48,6 +52,7 @@ p {
 }
 
 .Link {
+    width: 90%;
     text-decoration: none;
     font-family: Neuzeit;
     font-weight: 600;
@@ -56,7 +61,7 @@ p {
     padding: 14px;
     border-radius: 10px;
     border: 1px solid #ffffff;
-    margin: 12px 5vh 12px 5vh;
+    margin: 4px;
 }
 
 .Link:hover {
@@ -74,7 +79,17 @@ p {
 .MainLinks {
     display: flex;
     justify-content: space-evenly;
-    flex-direction: column
+    flex-direction: row;
+}
+
+.IntroductionText {
+    margin-left: 20%;
+    max-width: 60%;
+}
+
+.IntroductionText p {
+    margin: 4px;
+    font-size: large;
 }
 
 .ExamList {
@@ -84,6 +99,9 @@ p {
 }
 
 #SessionList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 90%;
     margin: 20px;
 }
@@ -113,8 +131,6 @@ p {
 .LocationDetails p {
     font-size: medium;
 }
-
-.LocationName {}
 
 .FilterContainer {
     margin: -10px;
@@ -197,6 +213,8 @@ label {
     font-family: Neuzeit;
     background-color: #ffffff;
     padding: 10px;
+    font-size: medium;
+    margin: 5px;
     color: #02020a;
     border: 1px solid #ffffff;
     border-radius: 6px;
@@ -232,4 +250,40 @@ label {
     font-size: medium;
     font-family: BokoniqueRegular;
     font-weight: 100;
+    margin-top: 20px;
+}
+
+.Footer p span {
+    font-family: EloquiaLight;
+    border-bottom: 1px solid #ffffff;
+}
+
+@media screen and (min-width: 769px) {
+    .Header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .Navigation {
+        margin: 0;
+    }
+    .IntroductionText p {
+        font-size: larger;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    .FilterButton {
+        font-size: larger;
+        margin: 5px;
+    }
+    .ExamCard {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .Link {
+        font-size: medium;
+    }
 }
