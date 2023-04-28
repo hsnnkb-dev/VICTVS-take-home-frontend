@@ -12,10 +12,13 @@ export default function ExamList(){
     name: "",
     location: "",
   });
+  const [ isLoading, setIsLoading ] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     fetchExamSessions()
       .then(examSessionsData => {
+        setIsLoading(false);
         setExamSessions(examSessionsData)
         setOriginalExamSessions(examSessionsData);
       });
@@ -47,6 +50,8 @@ export default function ExamList(){
       });
     } 
   }, [filtersObject])
+
+  if (isLoading) return <p className="Loading">Loading Sessions</p>;
 
   return (
     <main className="ExamList">
