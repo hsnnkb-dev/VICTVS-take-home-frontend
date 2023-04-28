@@ -6,7 +6,7 @@
     <link rel="icon" href="%PUBLIC_URL%/VICTVSIcon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app" />
+    <meta name="Exam Scheduler" content="View Exam sessions" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/VICTVSLogo.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -30,12 +30,12 @@
     <div id="root"></div>
     <!-- PWA Script -->
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
                 navigator.serviceWorker
-                    .register('./serviceWorker.js')
-                    .then((reg) => console.log('Success: ', reg.scope))
-                    .catch((err) => console.log('Failure: ', err));
+                    .register("./serviceWorker.js")
+                    .then((reg) => console.log("Success: ", reg.scope))
+                    .catch((err) => console.log("Failure: ", err));
             });
         }
     </script>

@@ -1,8 +1,7 @@
-import { fetchAuthToken, fetchExamSessions } from "../utils/api";
+import { fetchExamSessions } from "../utils/api";
 import { useEffect, useState } from "react";
 import ExamCard from "./ExamCard";
 import FilterModal from "./FilterModal";
-import { toast } from "react-hot-toast";
 
 export default function ExamList(){
   const [ examSessions, setExamSessions ] = useState([]);
