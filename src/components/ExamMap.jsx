@@ -218,7 +218,7 @@ function ExamMap() {
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyC4cxlEZUeWl6GCQvyuOzHnX5HzAorF1hU",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API,
   });
 
 
@@ -237,7 +237,7 @@ function ExamMap() {
       <h2>Exam Sessions Map</h2>
       <GoogleMap
         mapContainerStyle={containerStyle}
-        options={{ styles: mapStyle, disableDefaultUI: true}}
+        options={{ styles: mapStyle, disableDefaultUI: true }}
         center={center}
         zoom={8}
         onLoad={onLoad}
@@ -248,7 +248,9 @@ function ExamMap() {
             lat: parseFloat(session.Latitude),
             lng: parseFloat(session.Longitude),
           };
-          return <Marker position={latAndLon} icon={examIcon} key={session.id}/>;
+          return (
+            <Marker position={latAndLon} icon={examIcon} key={session.id} />
+          );
         })}
       </GoogleMap>
     </main>

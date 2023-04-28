@@ -1,17 +1,13 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://django-deply-test.onrender.com",
+  baseURL: process.env.REACT_APP_BASE_URL,
 });
 
-const ADMIN_TOKEN = "22476bb403ac1122b5f8dee62b95e52dde1826ee";
+const ADMIN_TOKEN = process.env.REACT_APP_ADMIN_TOKEN;
 
 export const fetchAuthToken = () => {
-  const body =  {
-      username: 'admin',
-      email: 'admin@email.com',
-      password: 'victvsapi'
-  }
+  const body = process.env.REACT_APP_ADMIN_CREDENTIALS;
   
   return api
     .post('/dj-rest-auth/login/', body)
